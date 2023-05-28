@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="card-header">
+        Prestamo de libros
+    </div>
+    <div class="card-body">
+        <form ngNativeValidate [formGroup]="formularioprestamos" (ngSubmit)="enviarDatos()">
+            <div class="mb-3">
+                <label for="" class="form-label">Nombre del Usuario:</label>
+                <select formControlName="nombre_usuario" name="usuarios" id="usuarios">
+                    <option  *ngFor="let usuario of usuario; let iControl= index">
+                        {{usuario.nombre}}
+                    </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Libro:</label>
+                <select formControlName="nombre_libro" name="usuarios" id="usuarios">
+                    <option  *ngFor="let libro of libros; let iControl= index">
+                        {{libro.nombre}}
+                    </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Fecha de prestamo</label>
+                <input required type="date"
+                  class="form-control" formControlName="fecha_prestamo" name="" id="" aria-describedby="helpId" placeholder="Fecha de ingreso">
+              </div>
+             <div class="btn-group" role="group" aria-label="Button group name">
+                <button type="submit" class="btn btn-success" style="margin-right: 5px;">Aceptar</button>
+                <button type="button" routerLink="/listar-usuario"class="btn btn-danger">Cancelar</button>
+               </div>
+        </form>
+    </div>
+</div>

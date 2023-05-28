@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+        Agregar Libro
+    </div>
+    <div class="card-body">
+        <form ngNativeValidate [formGroup]="formularioLibros" (ngSubmit)="enviarDatos()" >
+           <div class="mb-3">
+             <label for="" class="form-label">Nombre del libro</label>
+             <input required type="text"
+               class="form-control" formControlName="nombre" name="" id="" aria-describedby="helpId" placeholder="Escribe nombre del libro">
+           </div>
+           <div class="mb-3">
+             <label for="" class="form-label">Nombre Corto</label>
+             <input required type="text"
+               class="form-control" formControlName="nombre_corto" name="" id="" aria-describedby="helpId" placeholder="Escribe el nombre corto del libro">
+           </div>
+          <div class="mb-3">
+            <label for="" class="form-label">fecha_ingreso</label>
+            <input required type="date"
+              class="form-control" formControlName="fecha_ingreso" name="" id="" aria-describedby="helpId" placeholder="Fecha de ingreso">
+          </div>
+           <div class="btn-group" role="group" aria-label="Button group name">
+            <button type="submit" class="btn btn-success" style="margin-right: 5px;">Agregar</button>
+            <button type="button" routerLink="/listar-libro" class="btn btn-primary">Cancelar</button>
+           </div>
+        </form>
+    </div>
+</div>

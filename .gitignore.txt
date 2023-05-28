@@ -1,1 +1,2 @@
 CRUDAngular/node_modules/
+AppLibreria/CRUDAngular/node_modules

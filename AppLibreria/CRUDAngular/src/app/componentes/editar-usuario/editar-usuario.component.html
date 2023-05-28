@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header">
+        Editar Usuarios
+    </div>
+    <div class="card-body">
+        <form ngNativeValidate [formGroup]="formulariousuarios" (ngSubmit)="enviarDatos()">
+            <div class="mb-3">
+                <label for="" class="form-label">Nombre del Usuario</label>
+                <input required type="text"
+                  class="form-control" formControlName="nombre" name="" id="" aria-describedby="helpId" placeholder="Escribe nombre del Usuario">
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Nombre Corto</label>
+                <input required type="text"
+                  class="form-control" formControlName="nombre_corto" name="" id="" aria-describedby="helpId" placeholder="Escribe el nombre corto del Usuario">
+              </div>
+             <div class="btn-group" role="group" aria-label="Button group name">
+                <button type="submit" class="btn btn-success" style="margin-right: 5px;">Modificar</button>
+                <button type="button" routerLink="/listar-usuario"class="btn btn-danger">Cancelar</button>
+               </div>
+        </form>
+    </div>
+</div>
