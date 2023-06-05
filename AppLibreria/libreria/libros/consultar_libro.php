@@ -1,17 +1,19 @@
 <?php
 header('Access-Control-Allow-Origin: http://localhost:4200');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+header('Access-Control-Allow-Methods: GET');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json');
 
-include("conexion.php");
+include("../conexion.php");
 $con = conectar();
 
-$sql="SELECT * FROM libros";
+// Obtener el ID del LIBRO a eliminar desde la URL
+$id = $_GET['id'];
 
+// Realizar la lógica para eliminar el libro con el ID proporcionado
+$sql = "SELECT * FROM libros WHERE id='$id'";
 $query = mysqli_query($con, $sql);
 
-// Crear un array para almacenar los datos
 $datos = array();
 
 // Recorrer los resultados de la consulta

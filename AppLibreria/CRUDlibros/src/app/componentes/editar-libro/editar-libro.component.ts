@@ -51,7 +51,7 @@ export class EditarLibroComponent implements OnInit {
       (data)=>{
         console.log("data recibida", data);
         this.ruteador.navigateByUrl('/listar-libro');
-        
+
       }
     );
   }

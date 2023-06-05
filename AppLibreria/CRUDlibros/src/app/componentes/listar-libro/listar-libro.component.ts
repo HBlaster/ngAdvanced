@@ -15,8 +15,12 @@ export class ListarLibroComponent implements OnInit {
 
   ngOnInit(): void {
     this.crudService.obtenerDatosLibros().subscribe((data:any)=>{
-      this.libros = data;
-      console.log("datarecibida en variable libros: ",this.libros);
+      if(data.length>0){
+        this.libros =data;
+      }
+      else{
+        console.log("no se recibieron datos");
+      }
     });
   }
 
@@ -24,16 +28,17 @@ export class ListarLibroComponent implements OnInit {
     if(window.confirm("Desea borrar el registro?")){
     this.crudService.borrarLibro(idLibro)
     .subscribe((data:any)=>{
+      console.log(data);
       if(data.success===1){
         console.log(data.success);
       this.libros.splice(index,1);
       }
       else{console.log("Error al eliminar el registro")}
-      
+
     });
   }
   }
 
-  
+
 
 }

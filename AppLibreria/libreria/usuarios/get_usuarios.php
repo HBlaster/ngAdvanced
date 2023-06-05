@@ -2,12 +2,11 @@
 header('Access-Control-Allow-Origin: http://localhost:4200');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 header('Access-Control-Allow-Headers: Content-Type');
-header('Content-Type: application/json');
 
-include("conexion.php");
+include("../conexion.php");
 $con = conectar();
 
-$sql="SELECT * FROM libros";
+$sql="SELECT * FROM usuarios";
 
 $query = mysqli_query($con, $sql);
 
